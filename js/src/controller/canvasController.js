@@ -2,19 +2,25 @@ App.Controllers = {
     CanvasController: {
         registerDrawPointListener: function() {
             App.Views.CanvasView.getCanvas().click(function (e) {
-               App.Controllers.CanvasController.handleDrawPointEvent(e);
+                var position = App.Controllers.CanvasController.getMousePosition(e);
+                var canvas = App.Views.CanvasView.getCanvas();
+                var x = position.x / canvas.width();
+                var y = position.y / canvas.height();
+                App.TSP.addTown({x, y});
+                App.Controllers.CanvasController.handleDrawPointEvent(e);
             });
         },
         handleDrawPointEvent: function(e) {
-            App.Views.CanvasView.drawPoint(getMousePos(e).x, getMousePos(e).y);
-
-            function getMousePos(evt) {
-                var rect = App.Views.CanvasView.getCanvas()[0].getBoundingClientRect();
-                return {
-                    x: evt.clientX - rect.left,
-                    y: evt.clientY - rect.top
-                };
+            with(App.Controllers.CanvasController) {
+                App.Views.CanvasView.drawPoint(getMousePosition(e).x, getMousePosition(e).y);
             }
+        },
+        getMousePosition: function(e) {
+            var rect = App.Views.CanvasView.getCanvas()[0].getBoundingClientRect();
+            return {
+                x: e.clientX - rect.left,
+                y: e.clientY - rect.top
+            };
         }
     }
 }

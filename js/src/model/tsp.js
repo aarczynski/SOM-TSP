@@ -1,3 +1,6 @@
-/**
- * Created by adam.arczynski on 03/09/16.
- */
+App.TSP = {
+    towns: [],
+    addTown: function(t) {
+        this.towns.push(t);
+    }
+}
