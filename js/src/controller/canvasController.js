@@ -2,7 +2,7 @@ App.Controllers = {
     CanvasController: {
         registerDrawPointListener: function() {
             App.Views.CanvasView.getCanvas().click(function (e) {
-                var position = App.Controllers.CanvasController.getMousePosition(e);
+                var position = App.Utils.Mouse.getRelativeClickPosition(e, 'tsp');
                 var canvas = App.Views.CanvasView.getCanvas();
                 var x = position.x / canvas.width();
                 var y = position.y / canvas.height();
@@ -11,16 +11,9 @@ App.Controllers = {
             });
         },
         handleDrawPointEvent: function(e) {
-            with(App.Controllers.CanvasController) {
-                App.Views.CanvasView.drawPoint(getMousePosition(e).x, getMousePosition(e).y);
-            }
-        },
-        getMousePosition: function(e) {
-            var rect = App.Views.CanvasView.getCanvas()[0].getBoundingClientRect();
-            return {
-                x: e.clientX - rect.left,
-                y: e.clientY - rect.top
-            };
+            App.Views.CanvasView.drawPoint(
+                App.Utils.Mouse.getRelativeClickPosition(e, 'tsp').x,
+                App.Utils.Mouse.getRelativeClickPosition(e, 'tsp').y);
         }
     }
 }
