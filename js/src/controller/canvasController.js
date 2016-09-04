@@ -11,9 +11,8 @@ App.Controllers = {
             });
         },
         handleDrawPointEvent: function(e) {
-            App.Views.CanvasView.drawPoint(
-                App.Utils.Mouse.getRelativeClickPosition(e, 'tsp').x,
-                App.Utils.Mouse.getRelativeClickPosition(e, 'tsp').y);
+            var pos = App.Utils.Mouse.getRelativeClickPosition(e, 'tsp');
+            App.Views.CanvasView.drawPoint(pos.x, pos.y);
         }
     }
 }
