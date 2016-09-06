@@ -6,13 +6,13 @@ App.Controllers = {
                 var canvas = App.Views.CanvasView.getCanvas();
                 var x = position.x / canvas.width();
                 var y = position.y / canvas.height();
-                App.TSP.towns.push({x, y});
-                App.Controllers.CanvasController.handleDrawPointEvent(e);
+
+                App.TSP.towns.push({x: x, y: y});
+                App.Views.CanvasView.drawPoint(position.x, position.y);
             });
         },
-        handleDrawPointEvent: function(e) {
-            var pos = App.Utils.Mouse.getRelativeClickPosition(e, 'tsp');
-            App.Views.CanvasView.drawPoint(pos.x, pos.y);
+        refresh: function() {
+            App.Views.CanvasView.repaint(App.TSP.towns, App.Network.neurons);
         }
     }
 }
