@@ -12,8 +12,8 @@ App.Network.Neuron = function(_x, _y) {
         setX: function(x) { x = x; },
         setY: function(y) { y = y; },
         dist: function(other) {
-            dx = x - other.getX();
-            dy = y - other.getY();
+            var dx = x - other.getX();
+            var dy = y - other.getY();
             return Math.sqrt(dx * dx + dy * dy);
         }
     }

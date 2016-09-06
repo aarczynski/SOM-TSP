@@ -3,6 +3,9 @@ App.Views = {
         getCanvas: function() {
             return $('#tsp');
         },
+        getCanvasRect: function() {
+            return this.getCanvas()[0].getBoundingClientRect();
+        },
         drawPoint: function(x, y, colour, radius) {
             this.getCanvas().drawArc({
                 strokeStyle: colour || '#E6D873',
@@ -25,7 +28,8 @@ App.Views = {
         },
         repaint: function(towns, neurons) {
             this.getCanvas().clearCanvas();
-            var rect = App.Views.CanvasView.getCanvas()[0].getBoundingClientRect();
+            
+            var rect = App.Views.CanvasView.getCanvasRect();
             towns.forEach(function(t) {
                 App.Views.CanvasView.drawPoint(t.x * rect.height, t.y * rect.width);
             });
