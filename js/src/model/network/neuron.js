@@ -9,7 +9,12 @@ App.Network = {
             getX: function() { return x; },
             getY: function() { return y; },
             setX: function(x) { x = x; },
-            setY: function(y) { y = y; }
+            setY: function(y) { y = y; },
+            dist: function(other) {
+                dx = x - other.getX();
+                dy = y - other.getY();
+                return Math.sqrt(dx * dx + dy * dy);
+            }
         }
     }
 }
