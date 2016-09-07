@@ -1,14 +1,13 @@
 App.Controllers.GUIController = {
     registerStartListener: function () {
-        var kohonenNetwork = new App.Network.SOM();
-
         window.main = function () {
-            window.requestAnimationFrame(main);
-            kohonenNetwork.step();
+            //window.requestAnimationFrame(main);
+            setInterval(main, 10);
+            App.main.step();
         };
 
         $('#start').click(function() {
-            kohonenNetwork.init();
+            App.main.init();
             main();
         });
     }

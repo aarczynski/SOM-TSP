@@ -1,4 +1,1 @@
-App = {};
-App.Utils = {};
-App.Network = {};
-App.Controllers = {};
+App.main = new App.Network.SOM();

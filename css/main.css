@@ -1,3 +1,8 @@
-#tsp {
+canvas {
     background-color: #000000;
+}
+#start {
+    position: fixed;
+    top: 5px;
+    left: 1000px;
 }

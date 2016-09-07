@@ -3,12 +3,14 @@ App.Network.SOM = function() {
     var theta;
     var phi;
     var momentum;
+    var iterations;
     
     this.init = function() {
         theta = 0.5;
         phi = 0.5;
         momentum = 0.999;
         App.Network.neurons = [];
+        iterations = 0
 
         var alpha = 0.0;
         for (var i = 0; i < App.TSP.towns.length * 2; i++) {
@@ -31,7 +33,9 @@ App.Network.SOM = function() {
 
         phi *= momentum;
         theta *= momentum;
-    
+        iterations++;
+        
+        App.Controllers.HUDController.refresh();
         App.Controllers.CanvasController.refresh();
 
         function neighbourhoodFunction(neuron1, neuron2) {
@@ -57,5 +61,8 @@ App.Network.SOM = function() {
 
             return winner;
         }
+    },
+    this.getIterations = function() {
+        return iterations;
     }
 }
