@@ -1,6 +1,6 @@
-App.Network.Neuron = function(_x, _y) {
-    var x = _x;
-    var y = _y;
+App.Network.Neuron = function(x, y) {
+    var x = x;
+    var y = y;
     var wx = Math.random();
     var wy = Math.random();
 
@@ -9,8 +9,8 @@ App.Network.Neuron = function(_x, _y) {
         getWY: function() { return wy; },
         getX: function() { return x; },
         getY: function() { return y; },
-        setX: function(x) { x = x; },
-        setY: function(y) { y = y; },
+        setX: function(_x) { x = _x; },
+        setY: function(_y) { y = _y; },
         dist: function(other) {
             var dx = x - other.getX();
             var dy = y - other.getY();
