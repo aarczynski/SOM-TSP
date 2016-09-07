@@ -6,6 +6,10 @@ App.Views = {
         getCanvasRect: function() {
             return this.getCanvas()[0].getBoundingClientRect();
         },
+        clearCanvas: function() {
+            var ctx = this.getCanvas()[0].getContext("2d");
+            ctx.clearRect(0, 0, this.getCanvasRect().width, this.getCanvasRect().height);
+        },
         drawPoint: function(x, y, colour, radius) {
             this.getCanvas().drawArc({
                 strokeStyle: colour || '#E6D873',
@@ -27,10 +31,11 @@ App.Views = {
             });
         },
         repaint: function(towns, neurons) {
-            this.getCanvas().clearCanvas();
-            
+            // App.Views.CanvasView.getCanvas().clearCanvas();
+            App.Views.CanvasView.clearCanvas();
+
             var rect = App.Views.CanvasView.getCanvasRect();
-            towns.forEach(function(t) {
+            towns.forEach(function (t) {
                 App.Views.CanvasView.drawPoint(t.x * rect.height, t.y * rect.width);
             });
             for (var i = 0; i < neurons.length; i++) {
@@ -40,7 +45,7 @@ App.Views = {
                 var y2 = rect.height * App.Network.neurons[(i + 1) % App.Network.neurons.length].wy;
                 App.Views.CanvasView.drawLine({x: x1, y: y1}, {x: x2, y: y2});
                 App.Views.CanvasView.drawPoint(x1, y1, '#FF2222', 3);
-            };
+            }
         }
     }
 }

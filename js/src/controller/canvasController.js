@@ -1,19 +1,17 @@
-App.Controllers = {
-    CanvasController: {
-        registerDrawPointListener: function() {
-            App.Views.CanvasView.getCanvas().click(function (e) {
-                var position = App.Utils.Mouse.getRelativeClickPosition(e, 'tsp');
-                var canvas = App.Views.CanvasView.getCanvas();
-                var x = position.x / canvas.width();
-                var y = position.y / canvas.height();
+App.Controllers.CanvasController = {
+    registerDrawPointListener: function() {
+        App.Views.CanvasView.getCanvas().click(function (e) {
+            var position = App.Utils.Mouse.getRelativeClickPosition(e, 'tsp');
+            var canvas = App.Views.CanvasView.getCanvas();
+            var x = position.x / canvas.width();
+            var y = position.y / canvas.height();
 
-                App.TSP.towns.push({x: x, y: y});
-                App.Views.CanvasView.drawPoint(position.x, position.y);
-            });
-        },
-        refresh: function() {
-            App.Views.CanvasView.repaint(App.TSP.towns, App.Network.neurons);
-        }
+            App.TSP.towns.push({x: x, y: y});
+            App.Views.CanvasView.drawPoint(position.x, position.y);
+        });
+    },
+    refresh: function() {
+        App.Views.CanvasView.repaint(App.TSP.towns, App.Network.neurons);
     }
 }
 
