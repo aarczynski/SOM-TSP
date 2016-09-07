@@ -33,11 +33,11 @@ App.Views = {
             towns.forEach(function(t) {
                 App.Views.CanvasView.drawPoint(t.x * rect.height, t.y * rect.width);
             });
-            for (var i = 0; i < App.Network.neurons.length; i++) {
-                var x1 = rect.width * App.Network.neurons[i].getWX();
-                var y1 = rect.height * App.Network.neurons[i].getWY();
-                var x2 = rect.width * App.Network.neurons[(i + 1) % App.Network.neurons.length].getWX();
-                var y2 = rect.height * App.Network.neurons[(i + 1) % App.Network.neurons.length].getWY();
+            for (var i = 0; i < neurons.length; i++) {
+                var x1 = rect.width * App.Network.neurons[i].wx;
+                var y1 = rect.height * App.Network.neurons[i].wy;
+                var x2 = rect.width * App.Network.neurons[(i + 1) % App.Network.neurons.length].wx;
+                var y2 = rect.height * App.Network.neurons[(i + 1) % App.Network.neurons.length].wy;
                 App.Views.CanvasView.drawLine({x: x1, y: y1}, {x: x2, y: y2});
                 App.Views.CanvasView.drawPoint(x1, y1, '#FF2222', 3);
             };
