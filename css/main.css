@@ -5,7 +5,7 @@ html, body
     height: 100%;
 }
 #page {
-    width: 1000px;
+    width: 1200px;
     position: relative;
     margin: auto;
 }
@@ -13,22 +13,21 @@ html, body
     position: absolute;
 }
 #canvasContainer {
-    width: 900px;
+    width: 1000px;
     top: 0;
     left: 0;
 }
 #inputContainer {
-    width: 100px;
+    width: 200px;
     top: 0;
-    left: 900px;
+    left: 1000px;
     padding-left: 15px;
 }
 canvas {
     display: block;
     background-color: #000000;
+    border: 1px green solid;
 }
-#start {
-    position: fixed;
-    top: 5px;
-    left: 1000px;
+input {
+    width: 50px;
 }
