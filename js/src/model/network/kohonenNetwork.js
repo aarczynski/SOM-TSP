@@ -6,9 +6,9 @@ App.Network.SOM = function() {
     var iterations;
     
     this.init = function() {
-        theta = 0.5;
-        phi = 0.5;
-        momentum = 0.999;
+        theta = 0.9;
+        phi = 0.9;
+        momentum = 0.9995;
         App.Network.neurons = [];
         iterations = 0
 
@@ -34,9 +34,6 @@ App.Network.SOM = function() {
         phi *= momentum;
         theta *= momentum;
         iterations++;
-        
-        App.Controllers.HUDController.refresh();
-        App.Controllers.CanvasController.refresh();
 
         function neighbourhoodFunction(neuron1, neuron2) {
             return Math.exp( -1.0 * (d(neuron1, neuron2) * d(neuron1, neuron2) ) / ( 2.0 * theta * theta));
