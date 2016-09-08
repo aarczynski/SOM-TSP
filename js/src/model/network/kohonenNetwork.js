@@ -6,9 +6,9 @@ App.Network.SOM = function() {
     var iterations;
     
     this.init = function() {
-        theta = 0.9;
-        phi = 0.9;
-        momentum = 0.9995;
+        theta = 0.8;
+        phi = 0.8;
+        momentum = 0.99995;
         App.Network.neurons = [];
         iterations = 0
 
