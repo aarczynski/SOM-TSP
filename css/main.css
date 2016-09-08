@@ -5,11 +5,23 @@ html, body
     height: 100%;
 }
 #page {
-    width: 100%;
+    width: 1000px;
+    position: relative;
+    margin: auto;
+}
+#canvasContainer, #inputContainer {
+    position: absolute;
 }
 #canvasContainer {
-    width: 1000px;
-    margin: auto;
+    width: 900px;
+    top: 0;
+    left: 0;
+}
+#inputContainer {
+    width: 100px;
+    top: 0;
+    left: 900px;
+    padding-left: 15px;
 }
 canvas {
     display: block;
