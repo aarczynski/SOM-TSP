@@ -1,7 +1,7 @@
 App.Controllers.GUIController = {
     registerStartListener: function () {
         $('#start').click(function() {
-            App.main.init();
+            App.main.init(getInitParams());
             update();
 
             function update() {
@@ -11,6 +11,15 @@ App.Controllers.GUIController = {
                 requestAnimationFrame(update);
             }
         });
+        
+        function getInitParams() {
+            var params = {
+                theta: App.Views.GUIView.getTheta(),
+                phi: App.Views.GUIView.getPhi(),
+                momentum: App.Views.GUIView.getMomentum()
+            };
+            return params;
+        }
     }
 }
 

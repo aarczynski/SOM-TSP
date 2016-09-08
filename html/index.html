@@ -11,8 +11,9 @@
     <script defer type="text/javascript" src="../js/src/def.js"></script>
     <script defer type="text/javascript" src="../js/src/util/mouseEventUtil.js"></script>
     <script defer type="text/javascript" src="../js/src/view/canvasView.js"></script>
-    <script defer type="text/javascript" src="../js/src/controller/canvasController.js"></script>
+    <script defer type="text/javascript" src="../js/src/view/guiView.js"></script>
     <script defer type="text/javascript" src="../js/src/view/hudView.js"></script>
+    <script defer type="text/javascript" src="../js/src/controller/canvasController.js"></script>
     <script defer type="text/javascript" src="../js/src/controller/guiController.js"></script>
     <script defer type="text/javascript" src="../js/src/controller/hudController.js"></script>
     <script defer type="text/javascript" src="../js/src/model/tsp.js"></script>
@@ -30,15 +31,15 @@
     <div id="inputContainer">
         <div>
             <span class="label">&theta;:&nbsp;0,</span>
-            <input type="number" value="75">
+            <input id="inTheta" type="number" value="75">
         </div>
         <div>
             <span class="label">&phi;:&nbsp;0,</span>
-            <input type="number" value="75"/>
+            <input id="inPhi" type="number" value="75"/>
         </div>
         <div>
             <span class="label">momentum:&nbsp;0,</span>
-            <input type="number" value="999"/>
+            <input id="inMomentum" type="number" value="999"/>
         </div>
         <button id="start">START</button>
     </div>

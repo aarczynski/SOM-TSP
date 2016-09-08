@@ -5,10 +5,10 @@ App.Network.SOM = function() {
     var momentum;
     var iterations;
     
-    this.init = function() {
-        theta = 0.8;
-        phi = 0.8;
-        momentum = 0.99995;
+    this.init = function(params) {
+        theta = params.theta;
+        phi = params.phi;
+        momentum = params.momentum;
         App.Network.neurons = [];
         iterations = 0
 
