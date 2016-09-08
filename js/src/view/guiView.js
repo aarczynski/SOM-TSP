@@ -7,5 +7,17 @@ App.Views.GUIView = {
     },
     getMomentum: function() {
         return parseFloat('0.' + $('#inMomentum').val());
+    },
+    enable: function() {
+        $('#inTheta').prop('disabled', false);
+        $('#inPhi').prop('disabled', false);
+        $('#inMomentum').prop('disabled', false);
+        $('#start').text('START');
+    },
+    disable: function() {
+        $('#inTheta').prop('disabled', true);
+        $('#inPhi').prop('disabled', true);
+        $('#inMomentum').prop('disabled', true);
+        $('#start').text('STOP');
     }
 }

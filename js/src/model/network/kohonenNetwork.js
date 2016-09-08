@@ -61,5 +61,5 @@ App.Network.SOM = function() {
     },
     this.getIterations = function() {
         return iterations;
-    }
+    };
 }

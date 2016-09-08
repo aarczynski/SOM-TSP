@@ -10,6 +10,9 @@ App.Controllers.CanvasController = {
             App.Views.CanvasView.drawPoint(position.x, position.y);
         });
     },
+    unregisterDrawPointListener: function() {
+        App.Views.CanvasView.getCanvas().unbind('click');
+    },
     refresh: function() {
         App.Views.CanvasView.repaint(App.TSP.towns, App.Network.neurons);
     }

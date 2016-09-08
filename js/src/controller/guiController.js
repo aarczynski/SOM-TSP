@@ -1,14 +1,28 @@
 App.Controllers.GUIController = {
     registerStartListener: function () {
+        var running = false;
         $('#start').click(function() {
-            App.main.init(getInitParams());
-            update();
+            if(!running) {
+                App.Views.GUIView.disable();
+                App.Controllers.CanvasController.unregisterDrawPointListener();
+                running = true;
+                App.main.init(getInitParams());
+                update();
+            } else {
+                running = false;
+                App.Views.GUIView.enable();
+                App.Controllers.CanvasController.registerDrawPointListener();
+            }
 
             function update() {
-                for (var i = 0; i < 50; i++) {App.main.step();}
+                for (var i = 0; i < 50; i++) {
+                    App.main.step();
+                }
                 App.Controllers.HUDController.refresh();
                 App.Controllers.CanvasController.refresh();
-                requestAnimationFrame(update);
+                if (running) {
+                    requestAnimationFrame(update);
+                }
             }
         });
         
