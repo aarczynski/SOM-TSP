@@ -7,7 +7,7 @@ App.Controllers.CanvasController = {
             var y = position.y / canvas.height();
 
             App.TSP.towns.push({x: x, y: y});
-            App.Views.CanvasView.drawPoint(position.x, position.y);
+            App.Views.CanvasView.repaint(App.TSP.towns, App.Network.neurons);
         });
     },
     unregisterDrawPointListener: function() {
