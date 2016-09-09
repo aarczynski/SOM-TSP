@@ -1,5 +1,5 @@
 App.Controllers.GUIController = {
-    registerStartListener: function () {
+    registerStartButtonListener: function () {
         var running = false;
         $('#startButton').click(function() {
             if(!running) {
@@ -35,7 +35,7 @@ App.Controllers.GUIController = {
             return params;
         }
     },
-    registerClearListener: function() {
+    registerClearButtonListener: function() {
         $('#clearButton').click(function() {
             App.TSP.towns = [];
             App.Network.neurons = [];
@@ -75,7 +75,7 @@ App.Controllers.GUIController = {
 }
 
 $(document).ready(function() {
-    App.Controllers.GUIController.registerStartListener();
-    App.Controllers.GUIController.registerClearListener();
+    App.Controllers.GUIController.registerStartButtonListener();
+    App.Controllers.GUIController.registerClearButtonListener();
     App.Controllers.GUIController.registerSampleSelectListener();
 });
