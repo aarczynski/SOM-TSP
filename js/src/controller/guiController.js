@@ -34,9 +34,17 @@ App.Controllers.GUIController = {
             };
             return params;
         }
+    },
+    registerClearListener: function() {
+        $('#clear').click(function() {
+            App.TSP.towns = [];
+            App.Views.CanvasView.clearCanvas();
+            App.Views.HUDView.clearCanvas();
+        });
     }
 }
 
 $(document).ready(function() {
     App.Controllers.GUIController.registerStartListener();
+    App.Controllers.GUIController.registerClearListener();
 });
