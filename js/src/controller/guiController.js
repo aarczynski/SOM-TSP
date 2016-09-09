@@ -38,6 +38,7 @@ App.Controllers.GUIController = {
     registerClearListener: function() {
         $('#clearButton').click(function() {
             App.TSP.towns = [];
+            App.Network.neurons = [];
             App.Views.CanvasView.clearCanvas();
             App.Views.HUDView.clearCanvas();
             App.Views.GUIView.resetSampleSelect();
