@@ -1,7 +1,7 @@
 App.Controllers.GUIController = {
     registerStartListener: function () {
         var running = false;
-        $('#start').click(function() {
+        $('#startButton').click(function() {
             if(!running) {
                 App.Views.GUIView.disable();
                 App.Controllers.CanvasController.unregisterDrawPointListener();
@@ -36,7 +36,7 @@ App.Controllers.GUIController = {
         }
     },
     registerClearListener: function() {
-        $('#clear').click(function() {
+        $('#clearButton').click(function() {
             App.TSP.towns = [];
             App.Views.CanvasView.clearCanvas();
             App.Views.HUDView.clearCanvas();

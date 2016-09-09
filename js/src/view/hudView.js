@@ -1,6 +1,6 @@
 App.Views.HUDView = {
     getCanvas: function() {
-        return $('#hud');
+        return $('#hudCanvas');
     },
     getCanvasRect: function() {
         return this.getCanvas()[0].getBoundingClientRect();

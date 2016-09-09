@@ -1,6 +1,6 @@
 App.Views.CanvasView = {
     getCanvas: function() {
-        return $('#tsp');
+        return $('#tspCanvas');
     },
     getCanvasRect: function() {
         return this.getCanvas()[0].getBoundingClientRect();

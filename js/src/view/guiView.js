@@ -1,25 +1,25 @@
 App.Views.GUIView = {
     getTheta: function() {
-        return parseFloat('0.' + $('#inTheta').val());
+        return parseFloat('0.' + $('#thetaInput').val());
     },
     getPhi: function() {
-        return parseFloat('0.' + $('#inPhi').val());
+        return parseFloat('0.' + $('#phiInput').val());
     },
     getMomentum: function() {
-        return parseFloat('0.' + $('#inMomentum').val());
+        return parseFloat('0.' + $('#momentumInput').val());
     },
     enable: function() {
-        $('#inTheta').prop('disabled', false);
-        $('#inPhi').prop('disabled', false);
-        $('#inMomentum').prop('disabled', false);
-        $('#clear').prop('disabled', false);
-        $('#start').text('START');
+        $('#thetaInput').prop('disabled', false);
+        $('#phiInput').prop('disabled', false);
+        $('#momentumInput').prop('disabled', false);
+        $('#clearButton').prop('disabled', false);
+        $('#startButton').text('START');
     },
     disable: function() {
-        $('#inTheta').prop('disabled', true);
-        $('#inPhi').prop('disabled', true);
-        $('#inMomentum').prop('disabled', true);
-        $('#clear').prop('disabled', true);
-        $('#start').text('STOP');
+        $('#thetaInput').prop('disabled', true);
+        $('#phiInput').prop('disabled', true);
+        $('#momentumInput').prop('disabled', true);
+        $('#clearButton').prop('disabled', true);
+        $('#startButton').text('STOP');
     }
 }
