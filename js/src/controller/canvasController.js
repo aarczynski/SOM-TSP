@@ -8,6 +8,7 @@ App.Controllers.CanvasController = {
 
             App.TSP.towns.push({x: x, y: y});
             App.Views.CanvasView.repaint(App.TSP.towns, App.Network.neurons);
+            App.Views.GUIView.resetSampleSelect();
         });
     },
     unregisterDrawPointListener: function() {

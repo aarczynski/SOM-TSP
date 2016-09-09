@@ -40,6 +40,35 @@ App.Controllers.GUIController = {
             App.TSP.towns = [];
             App.Views.CanvasView.clearCanvas();
             App.Views.HUDView.clearCanvas();
+            App.Views.GUIView.resetSampleSelect();
+        });
+    },
+    registerSampleSelectListener: function() {
+        $.each(App.Sample.getSamples(), function() {
+            $('#sampleSelect')
+                .append($("<option></option>")
+                    .text(this.name)
+                );
+        });
+
+        $('#sampleSelect').change(function() {
+            App.TSP.towns = [];
+            App.Network.neurons = [];
+            var id = $("#sampleSelect option:selected").index();
+            if (id === 0) {
+                App.Views.CanvasView.repaint(App.TSP.towns, []);
+                App.Views.GUIView.setMomentum('8');
+                App.Views.GUIView.setPhi('8');
+                App.Views.GUIView.setTheta('9995');
+            } else {
+                var sample = App.Sample.getSamples()[id - 1];
+                sample.initTowns();
+                App.Views.GUIView.setMomentum(sample.params.momentum);
+                App.Views.GUIView.setPhi(sample.params.phi);
+                App.Views.GUIView.setTheta(sample.params.theta);
+            }
+            App.Views.CanvasView.repaint(App.TSP.towns, []);
+            App.Views.HUDView.clearCanvas();
         });
     }
 }
@@ -47,4 +76,5 @@ App.Controllers.GUIController = {
 $(document).ready(function() {
     App.Controllers.GUIController.registerStartListener();
     App.Controllers.GUIController.registerClearListener();
+    App.Controllers.GUIController.registerSampleSelectListener();
 });

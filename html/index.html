@@ -19,6 +19,7 @@
     <script defer type="text/javascript" src="../js/src/model/tsp.js"></script>
     <script defer type="text/javascript" src="../js/src/model/network/neuron.js"></script>
     <script defer type="text/javascript" src="../js/src/model/network/kohonenNetwork.js"></script>
+    <script defer type="text/javascript" src="../js/src/model/sample/sampleRepository.js"></script>
     <script defer type="text/javascript" src="../js/src/main.js"></script>
 </head>
 <body>
@@ -41,9 +42,13 @@
             <span class="label">momentum:&nbsp;0,</span>
             <input id="momentumInput" type="number" value="9995"/>
         </div>
-        <button id="startButton">START</button>
         <hr/>
+        <button id="startButton">START</button>
         <button id="clearButton">CLEAR</button>
+        <hr/>
+        <select id="sampleSelect">
+            <option>Select...</option>
+        </select>
     </div>
 </div>
 
