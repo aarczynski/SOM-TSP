@@ -2,7 +2,7 @@ App.Sample = {
     getSamples: function() {
         return [
             {
-                name: "Two Circles",
+                name: "2 Circles",
                 params: {
                     theta: 3,
                     phi: 9,
@@ -22,8 +22,43 @@ App.Sample = {
                     alpha = 0;
                     for (var i = 0; i < circleSize; i++) {
                         App.TSP.towns.push({
-                            x: 0.5 + 0.25 * Math.cos(alpha),
-                            y: 0.5 + 0.25 * Math.sin(alpha)});
+                            x: 0.5 + 0.15 * Math.cos(alpha),
+                            y: 0.5 + 0.15 * Math.sin(alpha)});
+                        alpha += Math.PI * 2.0 / circleSize;
+                    }
+                }
+            },
+            {
+                name: "3 Circles",
+                params: {
+                    theta: 5,
+                    phi: 8,
+                    momentum: 9999
+                },
+                initTowns: function() {
+                    var circleSize = 30;
+                    var alpha = 0.0;
+                    for (var i = 0; i < circleSize; i++) {
+                        App.TSP.towns.push({
+                            x: 0.5 + 0.45 * Math.cos(alpha),
+                            y: 0.5 + 0.45 * Math.sin(alpha)
+                        });
+                        alpha += Math.PI * 2.0 / circleSize;
+                    }
+                    circleSize = 20;
+                    alpha = 0;
+                    for (var i = 0; i < circleSize; i++) {
+                        App.TSP.towns.push({
+                            x: 0.5 + 0.30 * Math.cos(alpha),
+                            y: 0.5 + 0.30 * Math.sin(alpha)});
+                        alpha += Math.PI * 2.0 / circleSize;
+                    }
+                    circleSize = 15;
+                    alpha = 0;
+                    for (var i = 0; i < circleSize; i++) {
+                        App.TSP.towns.push({
+                            x: 0.5 + 0.15 * Math.cos(alpha),
+                            y: 0.5 + 0.15 * Math.sin(alpha)});
                         alpha += Math.PI * 2.0 / circleSize;
                     }
                 }
@@ -37,6 +72,24 @@ App.Sample = {
                 },
                 initTowns: function() {
                     var gridSize = 4;
+                    var space = (1/(gridSize + 1));
+                    for (var i = 0; i < gridSize * gridSize; i++) {
+                        App.TSP.towns.push({
+                            x: space + space * (i % gridSize),
+                            y: space + space * (Math.floor(i / gridSize))
+                        });
+                    }
+                }
+            },
+            {
+                name: "5x5 Grid",
+                params: {
+                    theta: 75,
+                    phi: 75,
+                    momentum: 9995
+                },
+                initTowns: function() {
+                    var gridSize = 5;
                     var space = (1/(gridSize + 1));
                     for (var i = 0; i < gridSize * gridSize; i++) {
                         App.TSP.towns.push({
