@@ -58,9 +58,9 @@ App.Controllers.GUIController = {
             var id = $("#sampleSelect option:selected").index();
             if (id === 0) {
                 App.Views.CanvasView.repaint(App.TSP.towns, []);
-                App.Views.GUIView.setMomentum('8');
+                App.Views.GUIView.setMomentum('9995');
                 App.Views.GUIView.setPhi('8');
-                App.Views.GUIView.setTheta('9995');
+                App.Views.GUIView.setTheta('8');
             } else {
                 var sample = App.Sample.getSamples()[id - 1];
                 sample.initTowns();
