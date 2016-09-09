@@ -1,2 +1,8 @@
-.idea
-SOM_TSP.iml
+*
+/**
+!js
+!js/**
+!css
+!css/**
+!html
+!html/**
