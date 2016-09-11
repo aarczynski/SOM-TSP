@@ -42,6 +42,9 @@ App.Controllers.GUIController = {
             App.Views.CanvasView.clearCanvas();
             App.Views.HUDView.clearCanvas();
             App.Views.GUIView.resetSampleSelect();
+            App.Views.GUIView.setMomentum('9995');
+            App.Views.GUIView.setPhi('8');
+            App.Views.GUIView.setTheta('8');
         });
     },
     registerSampleSelectListener: function() {
