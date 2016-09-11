@@ -64,7 +64,7 @@ App.Network.SOM = function() {
     };
     this.getSolutionDistance = function() {
         var dist = 0;
-        var rect = App.Views.CanvasView.getCanvasRect();
+        var rect = App.Controllers.CanvasController.getCanvasRect();
         for (var i = 0; i < App.Network.neurons.length; i++) {
             var x1 = rect.width * App.Network.neurons[i].wx;
             var y1 = rect.height * App.Network.neurons[i].wy;

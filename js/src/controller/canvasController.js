@@ -16,6 +16,9 @@ App.Controllers.CanvasController = {
     },
     refresh: function() {
         App.Views.CanvasView.repaint(App.TSP.towns, App.Network.neurons);
+    },
+    getCanvasRect: function() {
+        return App.Views.CanvasView.getCanvasRect();
     }
 }
 
