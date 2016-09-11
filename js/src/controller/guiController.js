@@ -66,6 +66,7 @@ App.Controllers.GUIController = {
             App.Views.GUIView.setTheta(sample.params.theta);
             App.Views.CanvasView.repaint(App.TSP.towns, []);
             App.Views.HUDView.clearCanvas();
+            App.Views.GUIView.resetSampleSelect();
         });
     }
 }
