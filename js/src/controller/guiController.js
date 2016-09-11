@@ -56,18 +56,11 @@ App.Controllers.GUIController = {
             App.TSP.towns = [];
             App.Network.neurons = [];
             var id = $("#sampleSelect option:selected").index();
-            if (id === 0) {
-                App.Views.CanvasView.repaint(App.TSP.towns, []);
-                App.Views.GUIView.setMomentum('9995');
-                App.Views.GUIView.setPhi('8');
-                App.Views.GUIView.setTheta('8');
-            } else {
-                var sample = App.Sample.getSamples()[id - 1];
-                sample.initTowns();
-                App.Views.GUIView.setMomentum(sample.params.momentum);
-                App.Views.GUIView.setPhi(sample.params.phi);
-                App.Views.GUIView.setTheta(sample.params.theta);
-            }
+            var sample = App.Sample.getSamples()[id - 1];
+            sample.initTowns();
+            App.Views.GUIView.setMomentum(sample.params.momentum);
+            App.Views.GUIView.setPhi(sample.params.phi);
+            App.Views.GUIView.setTheta(sample.params.theta);
             App.Views.CanvasView.repaint(App.TSP.towns, []);
             App.Views.HUDView.clearCanvas();
         });
