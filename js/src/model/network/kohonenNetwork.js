@@ -4,8 +4,10 @@ App.Network.SOM = function() {
     var phi;
     var momentum;
     var iterations;
+    var isLearningFinished;
     
     this.init = function(params) {
+        isLearningFinished = false;
         theta = params.theta;
         phi = params.phi;
         momentum = params.momentum;
@@ -23,12 +25,17 @@ App.Network.SOM = function() {
     this.step = function() {
         var randomTownId = Math.floor(Math.random() * App.TSP.towns.length);
         var learningVector = {x: App.TSP.towns[randomTownId].x, y: App.TSP.towns[randomTownId].y};
+        isLearningFinished = true;
 
         for (var i = 0; i < App.Network.neurons.length; i++) {
             var n = App.Network.neurons[i];
             var N = winningNeuron(learningVector);
-            n.wx += (phi * neighbourhoodFunction(n, N) * (learningVector.x - n.wx));
-            n.wy += (phi * neighbourhoodFunction(n, N) * (learningVector.y - n.wy));
+            var neighbourHood = neighbourhoodFunction(n, N);
+            n.wx += (phi * neighbourHood * (learningVector.x - n.wx));
+            n.wy += (phi * neighbourHood * (learningVector.y - n.wy));
+            if (neighbourHood !== 1 && neighbourHood > 0) {
+                isLearningFinished = false;
+            }
         }
 
         phi *= momentum;
@@ -73,5 +80,8 @@ App.Network.SOM = function() {
             dist += Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
         }
         return Math.floor(dist);
+    },
+    this.isLearningFinished = function() {
+        return isLearningFinished;
     }
 }

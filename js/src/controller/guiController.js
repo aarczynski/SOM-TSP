@@ -5,13 +5,13 @@ App.Controllers.GUIController = {
             if(!running) {
                 App.Views.GUIView.disable();
                 App.Controllers.CanvasController.unregisterDrawPointListener();
-                running = true;
                 App.main.init(getInitParams());
+                running = true;
                 update();
             } else {
-                running = false;
                 App.Views.GUIView.enable();
                 App.Controllers.CanvasController.registerDrawPointListener();
+                running = false;
             }
 
             function update() {
@@ -21,7 +21,13 @@ App.Controllers.GUIController = {
                 App.Controllers.HUDController.refresh();
                 App.Controllers.CanvasController.refresh();
                 if (running) {
-                    requestAnimationFrame(update);
+                    if (!App.main.isLearningFinished()) {
+                        requestAnimationFrame(update);
+                    } else {
+                        App.Views.GUIView.enable();
+                        App.Controllers.CanvasController.registerDrawPointListener();
+                        running = false;
+                    }
                 }
             }
         });
