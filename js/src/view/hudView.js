@@ -24,9 +24,9 @@ App.Views.HUDView = {
         this.clearCanvas();
         
         var s = "itrations: ".concat(iterations);
-        this.drawText(s, 100, 20);
+        this.drawText(s, 100, 25);
         
         s = "distance: ".concat(distance).concat("px");
-        this.drawText(s, 300, 20);
+        this.drawText(s, 300, 25);
     }
 }
