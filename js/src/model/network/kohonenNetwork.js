@@ -70,7 +70,7 @@ App.Network.SOM = function() {
             var y1 = rect.height * App.Network.neurons[i].wy;
             var x2 = rect.width * App.Network.neurons[(i + 1) % App.Network.neurons.length].wx;
             var y2 = rect.height * App.Network.neurons[(i + 1) % App.Network.neurons.length].wy;
-            dist += ((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
+            dist += Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
         }
         return Math.floor(dist);
     }
