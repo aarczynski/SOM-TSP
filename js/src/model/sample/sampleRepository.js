@@ -82,11 +82,54 @@ App.Sample = {
                 }
             },
             {
+                name: "4x4 Diagonal Grid",
+                params: {
+                    theta: 7,
+                    phi: 99,
+                    momentum: 9997
+                },
+                initTowns: function() {
+                    var gridSize = 4;
+                    var space = (1/(gridSize + 1));
+                    for (var i = 0; i < gridSize * gridSize; i++) {
+                        App.TSP.towns.push({
+                            x: space + space * (i % gridSize),
+                            y: space + space * (Math.floor(i / gridSize))
+                        });
+                    }
+                    gridSize--;
+                    for (var i = 0; i < gridSize * gridSize; i++) {
+                        App.TSP.towns.push({
+                            x: 1.5 * space + space * (i % gridSize),
+                            y: 1.5 * space + space * (Math.floor(i / gridSize))
+                        });
+                    }
+                }
+            },
+            {
                 name: "5x5 Grid",
                 params: {
-                    theta: 75,
-                    phi: 75,
-                    momentum: 9995
+                    theta: 95,
+                    phi: 8,
+                    momentum: 9999
+                },
+                initTowns: function () {
+                    var gridSize = 5;
+                    var space = (1 / (gridSize + 1));
+                    for (var i = 0; i < gridSize * gridSize; i++) {
+                        App.TSP.towns.push({
+                            x: space + space * (i % gridSize),
+                            y: space + space * (Math.floor(i / gridSize))
+                        });
+                    }
+                }
+            },
+            {
+                name: "5x5 Diagonal Grid",
+                params: {
+                    theta: 95,
+                    phi: 5,
+                    momentum: 9998
                 },
                 initTowns: function() {
                     var gridSize = 5;
@@ -95,6 +138,13 @@ App.Sample = {
                         App.TSP.towns.push({
                             x: space + space * (i % gridSize),
                             y: space + space * (Math.floor(i / gridSize))
+                        });
+                    }
+                    gridSize--;
+                    for (var i = 0; i < gridSize * gridSize; i++) {
+                        App.TSP.towns.push({
+                            x: 1.5 * space + space * (i % gridSize),
+                            y: 1.5 * space + space * (Math.floor(i / gridSize))
                         });
                     }
                 }
