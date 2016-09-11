@@ -26,7 +26,11 @@ App.Views.HUDView = {
         var s = "itrations: ".concat(iterations);
         this.drawText(s, 100, 25);
         
-        s = "distance: ".concat(distance).concat("px");
+        s = "distance: ".concat(formatNumber(distance)).concat("px");
         this.drawText(s, 300, 25);
+
+        function formatNumber(num) {
+            return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1 ")
+        }
     }
 }
