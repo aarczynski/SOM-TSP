@@ -20,10 +20,13 @@ App.Views.HUDView = {
             text: text
         });
     },
-    repaint: function(iterations) {
+    repaint: function(iterations, distance) {
         this.clearCanvas();
+        
         var s = "itrations: ".concat(iterations);
         this.drawText(s, 100, 20);
-
+        
+        s = "distance: ".concat(distance).concat("px");
+        this.drawText(s, 300, 20);
     }
 }

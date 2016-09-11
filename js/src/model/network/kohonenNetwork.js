@@ -62,4 +62,16 @@ App.Network.SOM = function() {
     this.getIterations = function() {
         return iterations;
     };
+    this.getSolutionDistance = function() {
+        var dist = 0;
+        var rect = App.Views.CanvasView.getCanvasRect();
+        for (var i = 0; i < App.Network.neurons.length; i++) {
+            var x1 = rect.width * App.Network.neurons[i].wx;
+            var y1 = rect.height * App.Network.neurons[i].wy;
+            var x2 = rect.width * App.Network.neurons[(i + 1) % App.Network.neurons.length].wx;
+            var y2 = rect.height * App.Network.neurons[(i + 1) % App.Network.neurons.length].wy;
+            dist += ((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
+        }
+        return Math.floor(dist);
+    }
 }
