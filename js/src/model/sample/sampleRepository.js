@@ -127,8 +127,8 @@ App.Sample = {
             {
                 name: "5x5 Diagonal Grid",
                 params: {
-                    theta: 95,
-                    phi: 5,
+                    theta: 5,
+                    phi: 85,
                     momentum: 9998
                 },
                 initTowns: function() {
