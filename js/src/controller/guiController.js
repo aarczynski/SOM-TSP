@@ -18,8 +18,8 @@ App.Controllers.GUIController = {
                 for (var i = 0; i < 50; i++) {
                     App.main.step();
                 }
-                App.Controllers.HUDController.refresh();
-                App.Controllers.CanvasController.refresh();
+                App.Views.HUDView.repaint(App.main.getIterations(), App.main.getSolutionDistance());
+                App.Views.CanvasView.repaint(App.TSP.towns, App.Network.neurons);
                 if (running) {
                     if (!App.main.isLearningFinished()) {
                         requestAnimationFrame(update);

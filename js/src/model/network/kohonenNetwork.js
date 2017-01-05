@@ -19,8 +19,6 @@ App.Network.SOM = function() {
             App.Network.neurons.push(new App.Network.Neuron(0.5 + 0.5 * Math.cos(alpha), 0.5 + 0.5 * Math.sin(alpha)));
             alpha += Math.PI * 2.0 / (App.TSP.towns.length * 2);
         }
-
-        App.Controllers.CanvasController.refresh();
     };
     this.step = function() {
         var randomTownId = Math.floor(Math.random() * App.TSP.towns.length);

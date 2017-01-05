@@ -30,7 +30,7 @@ App.Views.CanvasView = {
         });
     },
     repaint: function(towns, neurons) {
-        App.Views.CanvasView.clearCanvas();
+        this.clearCanvas();
 
         var rect = App.Views.CanvasView.getCanvasRect();
         towns.forEach(function (t) {
