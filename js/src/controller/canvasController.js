@@ -1,31 +1,31 @@
-App.Controllers.CanvasController = {
+App.Controller.CanvasController = {
     registerDrawPointListener: function() {
-        App.Views.CanvasView.getCanvas().click(function (e) {
-            var position = App.Utils.Mouse.getRelativeClickPosition(e, 'tspCanvas');
-            var canvas = App.Views.CanvasView.getCanvas();
+        App.View.CanvasView.getCanvas().click(function (e) {
+            var position = App.Util.Mouse.getRelativeClickPosition(e, 'tspCanvas');
+            var canvas = App.View.CanvasView.getCanvas();
             var x = position.x / canvas.width();
             var y = position.y / canvas.height();
 
             App.TSP.towns.push({x: x, y: y});
-            App.Views.CanvasView.repaint(App.TSP.towns, App.Network.neurons);
-            App.Views.GUIView.resetSampleSelect();
+            App.View.CanvasView.repaint(App.TSP.towns, App.Network.neurons);
+            App.View.GUIView.resetSampleSelect();
 
             if (App.TSP.towns.length > 1) {
-                App.Views.GUIView.enableStartButton();
+                App.View.GUIView.enableStartButton();
             }
         });
     },
     unregisterDrawPointListener: function() {
-        App.Views.CanvasView.getCanvas().unbind('click');
+        App.View.CanvasView.getCanvas().unbind('click');
     },
     refresh: function() {
-        App.Views.CanvasView.repaint(App.TSP.towns, App.Network.neurons);
+        App.View.CanvasView.repaint(App.TSP.towns, App.Network.neurons);
     },
     getCanvasRect: function() {
-        return App.Views.CanvasView.getCanvasRect();
+        return App.View.CanvasView.getCanvasRect();
     }
 }
 
 $(document).ready(function() {
-    App.Controllers.CanvasController.registerDrawPointListener();
+    App.Controller.CanvasController.registerDrawPointListener();
 });

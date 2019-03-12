@@ -1,8 +1,8 @@
 App = {};
-App.Utils = {};
+App.Util = {};
 App.Network = {};
-App.Controllers = {};
-App.Views = {};
+App.Controller = {};
+App.View = {};
 App.Sample = {};
 App.TSP = {
     towns: []

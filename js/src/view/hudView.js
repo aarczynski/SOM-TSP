@@ -1,4 +1,4 @@
-App.Views.HUDView = {
+App.View.HUDView = {
     getCanvas: function() {
         return $('#hudCanvas');
     },

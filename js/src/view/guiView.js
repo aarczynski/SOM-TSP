@@ -1,4 +1,4 @@
-App.Views.GUIView = {
+App.View.GUIView = {
     getTheta: function() {
         return parseFloat('0.' + $('#thetaInput').val());
     },

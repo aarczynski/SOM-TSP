@@ -1,4 +1,4 @@
-App.Views.CanvasView = {
+App.View.CanvasView = {
     getCanvas: function() {
         return $('#tspCanvas');
     },
@@ -32,17 +32,17 @@ App.Views.CanvasView = {
     repaint: function(towns, neurons) {
         this.clearCanvas();
 
-        var rect = App.Views.CanvasView.getCanvasRect();
+        var rect = App.View.CanvasView.getCanvasRect();
         towns.forEach(function (t) {
-            App.Views.CanvasView.drawPoint(t.x * rect.height, t.y * rect.width);
+            App.View.CanvasView.drawPoint(t.x * rect.height, t.y * rect.width);
         });
         for (var i = 0; i < neurons.length; i++) {
             var x1 = rect.width * App.Network.neurons[i].wx;
             var y1 = rect.height * App.Network.neurons[i].wy;
             var x2 = rect.width * App.Network.neurons[(i + 1) % App.Network.neurons.length].wx;
             var y2 = rect.height * App.Network.neurons[(i + 1) % App.Network.neurons.length].wy;
-            App.Views.CanvasView.drawLine({x: x1, y: y1}, {x: x2, y: y2});
-            App.Views.CanvasView.drawPoint(x1, y1, '#FF2222', 3);
+            App.View.CanvasView.drawLine({x: x1, y: y1}, {x: x2, y: y2});
+            App.View.CanvasView.drawPoint(x1, y1, '#FF2222', 3);
         }
     }
 }
