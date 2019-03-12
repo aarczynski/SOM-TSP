@@ -17,7 +17,7 @@ App.Views.GUIView = {
     setMomentum: function(m) {
         $('#momentumInput').val(m);
     },
-    enable: function() {
+    enableGui: function() {
         $('#thetaInput').prop('disabled', false);
         $('#phiInput').prop('disabled', false);
         $('#momentumInput').prop('disabled', false);
@@ -25,7 +25,7 @@ App.Views.GUIView = {
         $('#clearButton').prop('disabled', false);
         $('#startButton').text('START');
     },
-    disable: function() {
+    disableGui: function() {
         $('#thetaInput').prop('disabled', true);
         $('#phiInput').prop('disabled', true);
         $('#momentumInput').prop('disabled', true);

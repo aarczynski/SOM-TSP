@@ -3,13 +3,13 @@ App.Controllers.GUIController = {
         var running = false;
         $('#startButton').click(function() {
             if(!running) {
-                App.Views.GUIView.disable();
+                App.Views.GUIView.disableGui();
                 App.Controllers.CanvasController.unregisterDrawPointListener();
                 App.main.init(getInitParams());
                 running = true;
                 update();
             } else {
-                App.Views.GUIView.enable();
+                App.Views.GUIView.enableGui();
                 App.Controllers.CanvasController.registerDrawPointListener();
                 running = false;
             }
@@ -24,7 +24,7 @@ App.Controllers.GUIController = {
                     if (!App.main.isLearningFinished()) {
                         requestAnimationFrame(update);
                     } else {
-                        App.Views.GUIView.enable();
+                        App.Views.GUIView.enableGui();
                         App.Controllers.CanvasController.registerDrawPointListener();
                         running = false;
                     }
