@@ -1,3 +1,0 @@
-App.TSP = {
-    towns: []
-}
