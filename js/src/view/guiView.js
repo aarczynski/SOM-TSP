@@ -33,6 +33,12 @@ App.Views.GUIView = {
         $('#clearButton').prop('disabled', true);
         $('#startButton').text('STOP');
     },
+    enableStartButton: function() {
+        $('#startButton').prop('disabled', false);
+    },
+    disableStartButton: function() {
+        $('#startButton').prop('disabled', true);
+    },
     resetSampleSelect: function() {
         $('#sampleSelect option').each(function() {
             $(this).prop('selected', false);

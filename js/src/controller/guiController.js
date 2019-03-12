@@ -1,5 +1,6 @@
 App.Controllers.GUIController = {
     registerStartButtonListener: function () {
+        App.Views.GUIView.disableStartButton();
         var running = false;
         $('#startButton').click(function() {
             if(!running) {
@@ -48,6 +49,7 @@ App.Controllers.GUIController = {
             App.Views.CanvasView.clearCanvas();
             App.Views.HUDView.clearCanvas();
             App.Views.GUIView.resetSampleSelect();
+            App.Views.GUIView.disableStartButton()
             App.Views.GUIView.setMomentum('9995');
             App.Views.GUIView.setPhi('8');
             App.Views.GUIView.setTheta('8');
@@ -73,6 +75,7 @@ App.Controllers.GUIController = {
             App.Views.CanvasView.repaint(App.TSP.towns, []);
             App.Views.HUDView.clearCanvas();
             App.Views.GUIView.resetSampleSelect();
+            App.Views.GUIView.enableStartButton();
         });
     }
 }

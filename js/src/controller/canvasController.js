@@ -9,6 +9,10 @@ App.Controllers.CanvasController = {
             App.TSP.towns.push({x: x, y: y});
             App.Views.CanvasView.repaint(App.TSP.towns, App.Network.neurons);
             App.Views.GUIView.resetSampleSelect();
+
+            if (App.TSP.towns.length > 1) {
+                App.Views.GUIView.enableStartButton();
+            }
         });
     },
     unregisterDrawPointListener: function() {
