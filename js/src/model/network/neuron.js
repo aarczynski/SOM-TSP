@@ -5,8 +5,8 @@ App.Network.Neuron = function(x, y) {
     var wy = Math.random();
 
     return {
-        getInitialX: function() { return x; },
-        getInitialY: function() { return y; },
+        x: x,
+        y: y,
         wx: wx,
         wy: wy
     }

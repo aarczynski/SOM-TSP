@@ -43,8 +43,8 @@ App.Network.SOM = function() {
         function neighbourhoodFunction(neuron1, neuron2) {
             return Math.exp( -1.0 * (d(neuron1, neuron2) * d(neuron1, neuron2) ) / ( 2.0 * theta * theta));
             function d(n1, n2) {
-                var dx = n1.getInitialX() - n2.getInitialX();
-                var dy = n1.getInitialY() - n2.getInitialY();
+                var dx = n1.x - n2.x;
+                var dy = n1.y - n2.y;
                 return Math.sqrt(dx * dx + dy * dy);
             }
         }
