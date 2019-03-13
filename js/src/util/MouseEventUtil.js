@@ -6,4 +6,4 @@ App.Util.Mouse = {
             y: e.clientY - rect.top
         };
     }
-}
+};

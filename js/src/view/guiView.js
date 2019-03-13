@@ -42,7 +42,7 @@ App.View.GUIView = {
     resetSampleSelect: function() {
         $('#sampleSelect option').each(function() {
             $(this).prop('selected', false);
-        })
+        });
         $('#sampleSelect :first-child').prop('selected', true);
     }
-}
+};

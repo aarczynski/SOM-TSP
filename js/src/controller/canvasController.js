@@ -21,7 +21,7 @@ App.Controller.CanvasController = {
     getCanvasRect: function() {
         return App.View.CanvasView.getCanvasRect();
     }
-}
+};
 
 $(document).ready(function() {
     App.Controller.CanvasController.registerDrawPointListener();

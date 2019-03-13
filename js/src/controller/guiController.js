@@ -78,7 +78,7 @@ App.Controller.GUIController = {
             App.View.GUIView.enableStartButton();
         });
     }
-}
+};
 
 $(document).ready(function() {
     App.Controller.GUIController.registerStartButtonListener();

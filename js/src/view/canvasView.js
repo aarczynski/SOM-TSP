@@ -45,4 +45,4 @@ App.View.CanvasView = {
             App.View.CanvasView.drawPoint(x1, y1, '#FF2222', 3);
         }
     }
-}
+};

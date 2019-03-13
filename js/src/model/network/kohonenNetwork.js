@@ -12,7 +12,7 @@ App.Network.SOM = function() {
         phi = params.phi;
         momentum = params.momentum;
         App.Network.neurons = [];
-        iterations = 0
+        iterations = 0;
 
         var alpha = 0.0;
         for (var i = 0; i < App.TSP.towns.length * 2; i++) {
@@ -63,7 +63,7 @@ App.Network.SOM = function() {
 
             return winner;
         }
-    },
+    };
     this.getIterations = function() {
         return iterations;
     };
@@ -78,8 +78,8 @@ App.Network.SOM = function() {
             dist += Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
         }
         return Math.floor(dist);
-    },
+    };
     this.isLearningFinished = function() {
         return isLearningFinished;
     }
-}
+};

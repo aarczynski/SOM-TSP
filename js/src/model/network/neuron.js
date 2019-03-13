@@ -10,5 +10,4 @@ App.Network.Neuron = function(x, y) {
         wx: wx,
         wy: wy
     }
-}
-
+};
