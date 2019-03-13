@@ -23,7 +23,7 @@ App.View.HUDView = {
     repaint: function(iterations, distance) {
         this.clearCanvas();
         
-        var s = "itrations: ".concat(iterations);
+        var s = "iterations: ".concat(iterations);
         this.drawText(s, 100, 25);
         
         s = "distance: ".concat(formatNumber(distance)).concat("px");
