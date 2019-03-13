@@ -1,5 +1,5 @@
 App = {};
-App.Util = {};
+App.Event = {};
 App.Network = {};
 App.Controller = {};
 App.View = {};

@@ -1,7 +1,7 @@
 App.Controller.CanvasController = {
     registerDrawPointListener: function() {
         App.View.CanvasView.getCanvas().click(function (e) {
-            var position = App.Util.Mouse.getRelativeClickPosition(e, 'tspCanvas');
+            var position = App.Event.Mouse.getRelativeClickPosition(e, 'tspCanvas');
             var canvas = App.View.CanvasView.getCanvas();
             var x = position.x / canvas.width();
             var y = position.y / canvas.height();

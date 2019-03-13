@@ -1,4 +1,4 @@
-App.Util.Mouse = {
+App.Event.Mouse = {
     getRelativeClickPosition: function(e, objId) {
         var rect = $('#' + objId)[0].getBoundingClientRect();
         return {
