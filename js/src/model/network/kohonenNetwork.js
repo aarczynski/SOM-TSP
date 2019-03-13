@@ -25,9 +25,9 @@ App.Network.SOM = function() {
         var learningVector = {x: App.TSP.towns[randomTownId].x, y: App.TSP.towns[randomTownId].y};
         isLearningFinished = true;
 
+        var N = winningNeuron(learningVector);
         for (var i = 0; i < App.Network.neurons.length; i++) {
             var n = App.Network.neurons[i];
-            var N = winningNeuron(learningVector);
             var neighbourHood = neighbourhoodFunction(n, N);
             n.wx += (phi * neighbourHood * (learningVector.x - n.wx));
             n.wy += (phi * neighbourHood * (learningVector.y - n.wy));
